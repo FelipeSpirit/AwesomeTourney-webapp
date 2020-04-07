@@ -32,6 +32,7 @@ create table personas (
    nombre_persona       varchar(48),
    apellido_persona     varchar(48),
    telefono_persona     varchar(10),
+   email_persona        varchar(64),
    primary key (id_persona)
 );
 
@@ -106,4 +107,6 @@ alter table torneos add constraint tor_fk_ida foreign key (id_persona)
 
 alter table torneos add constraint tor_fk_idj2 foreign key (id_juego)
       references juegos (id_juego) on delete restrict on update restrict;
+      
+alter table personas add constraint per_uq_nkp unique (nickname_persona);
 
