@@ -2,21 +2,11 @@
 <html>
 <head>
 	<title>Awesome Tourney</title>
+	<link rel="shortcut icon" href="/images/favicon.png" />
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-	
-	<style type="text/css">
-		body {
-		    display: flex;
-		    flex-wrap: wrap;
-		    min-height: 100vh
-		}
-
-		footer {
-		    align-self: flex-end;
-		}
-	</style>
+	<link rel="stylesheet" type="text/css" href="/assets/css/main.css">
 </head>
 
 <body>
