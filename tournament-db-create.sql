@@ -32,7 +32,8 @@ create table personas (
    nombre_persona       varchar(48),
    apellido_persona     varchar(48),
    telefono_persona     varchar(10),
-   email_persona        varchar(64),
+   email_persona        varchar(64) not null,
+   contrasena_persona	varchar(32) not null invisible,
    primary key (id_persona)
 );
 
@@ -47,6 +48,7 @@ create table torneos (
    id_persona           int(4) not null,
    nombre_torneo        varchar(48) not null,
    tipo_torneo          char(1) not null,
+   fecha_torneo			datetime not null,
    primary key (id_torneo)
 );
 
@@ -66,6 +68,7 @@ create table encuentros (
    id_torneo            int(3) not null,
    id_equipo_a          int(3) not null,
    id_equipo_b          int(3) not null,
+   fecha_encuentro		datetime,
    puntuacion_a         int(3) not null,
    puntuacion_b         int(3) not null,
    primary key (id_encuentro)
