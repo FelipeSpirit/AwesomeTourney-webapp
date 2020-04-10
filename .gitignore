@@ -2,3 +2,4 @@
 *.cdb
 *.pdb
 *.ldb
+includes/database.php
