@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Awesome Tourney</title>
-	<link rel="shortcut icon" href="/images/favicon.png" />
+	<title>Dashboard | Awesome Tourney</title>
+	<link rel="shortcut icon" href="/images/favicon.png">
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -10,14 +10,17 @@
 </head>
 
 <body>
-	<header class="header col-lg-12">
+	<header class="col-lg-12">
 		<img id="header-logo" src="/images/logo.png">
 	</header>
 
-	<content style="float: left; margin-bottom: 20px;" class="col-lg-12">
+	<content style="margin-bottom: 20px;" class="col-lg-12">
 		<div class="row">
 			<div class="col-lg-12">
-				<h2>CONTENT</h2>
+				<div style="float: left;" class="col-lg-12">
+					<label><h1>Tus torneos</h1></label>
+					<button style="float: right;" class="btn btn-info">Nuevo torneo</button>
+				</div>
 			</div>
 		</div>
 	</content>

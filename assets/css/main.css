@@ -1,9 +1,21 @@
 body {
 	display: flex;
 	flex-wrap: wrap;
-	min-height: 100vh
+	min-height: 100vh;
+}
+
+header{
+	max-height: 64px;
 }
 
 footer {
+	display: flex;
 	align-self: flex-end;
+	background-color: black;
+	color: white;
 }
+
+#header-logo {
+	width: 250px;
+}
+
