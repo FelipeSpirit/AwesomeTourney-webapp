@@ -1,0 +1,252 @@
+
+*{
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box; /*para chrome y safari*/
+	-moz-box-sizing: border-box; /*para mozzila*/
+	box-sizing: border-box;
+}
+
+body{
+	font-family: sans-serif;
+}
+/*HEADER*/
+.header{
+	background: #BD3A31;
+	border-bottom: 1px solid #f0f0f0;
+	padding: 4px 0;
+	overflow: hidden;
+}
+
+.header .logo{
+	float: left;
+	padding: 3px 0;
+	padding-left: 20px;
+}
+
+.header .logo img{
+	width: 100%;
+}
+
+.header .menu-principal{
+	float: right;
+	display: inline-block;
+	padding: 35px 20px;
+}
+
+.header .menu-principal li{
+	display: inline-block;
+	list-style: none;
+	margin: 4px auto;
+}
+
+.header .menu-principal li a{
+	text-decoration: none;
+	vertical-align: center;
+	padding: 15px 10px;
+	font-size: 18px;
+	color: #C6C6C6;
+}
+
+.header .menu-principal li a:hover{
+	font-size: 20px;
+	color: #FFFFFF;
+}
+
+/*PANEL CENTRAL*/
+
+.central{
+	background: #E9D3D3;
+	padding: 1% 1%;
+	overflow: hidden;
+}
+
+.central .slider{
+	float: left;
+	display: inline-block;
+	width: 68%;
+	height: auto;
+}
+
+.central .slider img{
+	width: 100%;
+}
+
+.central .aside-login{
+	float: right;
+	display: inline-block;
+	border: 2px solid #000;
+	border-radius: 25px 25px;
+	padding: 2% 2%;
+	width: 30%;
+	height: auto;	
+	background: #FFF;
+}
+
+.central .aside-login .texto-iniciosesion{
+	font-size: 30px;
+	text-align: center;
+	padding: 30px 0;
+	font-weight: normal;
+}
+
+.central .aside-login .input-fields{
+	padding: 5px 0;
+	text-align: center;
+}
+
+.central .aside-login .login-input{
+	font-size: 30px;
+	padding: 6px 5px;
+	margin-bottom: 35px;
+	border: 2px solid #C6C6C6;
+	width: 100%;
+	text-align: center;
+}
+
+.central .aside-login .boton-login{
+	text-align: center;
+	display: block;
+	margin-bottom: 20px;
+}
+
+.central .aside-login .boton-login #boton-login{
+	background: #F9F9F9;
+	border: 1px solid #707070;
+	font-size: 20px;
+	vertical-align: middle;
+	padding: 1px 10px
+}
+
+
+.central .aside-login #boton-login .img-button{
+	padding: 5px 5px;
+}
+
+.central .aside-login #boton-login .img-button img{
+	float: left;
+}
+
+.central .aside-login #boton-login .img-button .text-button{
+	float: right;
+	vertical-align: middle;
+	padding: 10px 10px;
+	color: #9B9999;
+}
+
+.central .aside-login .recuperar-psw{
+	display: block;
+	overflow: hidden;
+	padding: 10px 0;
+}
+
+.central .aside-login a{
+	color: #349DD9;
+	float: right;
+}
+
+.central .aside-login .boton-crear{
+	margin: 0 2px;
+	margin-top: 20px;
+	text-align: center;
+	display: block;
+}
+
+.central .aside-login #boton-crearcuenta{
+	text-align: center;
+	border: 1px solid #FF0404;
+	font-size: 20px;
+	padding: 15px 15px;
+	background: #FFF;
+}
+
+/*POPUP*/
+
+.pop-up{
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.7);
+	position: absolute;
+	justify-content: center;
+	top: 0;
+	display: none;
+}
+
+.pop-up .register-form{
+	background-color: white;
+	width: 40%;
+	height: 100%;
+	border-radius: 8px;
+	text-align: center;
+	position: relative;
+	padding: 2% 4%;
+}
+
+.pop-up .register-form .cerrar-popup{
+	position: absolute;
+	display: inline-block;
+	top: 0;
+	right: 2%;
+	font-size: 250%;
+	transform: rotate(45deg);
+}
+
+.pop-up .register-form .cerrar-popup h3:hover{
+	cursor: pointer;
+}
+
+.pop-up .register-form h1{
+	font-weight: normal;
+}
+
+.pop-up .register-form .reg-form{
+	margin: 4% 2%;
+	display: inline-block;
+	
+}
+
+.pop-up .register-form .reg-form h3{
+	font-weight: normal;
+	font-size: 130%;
+	text-align: left;
+	width: 120%;
+	float: right;
+}
+
+.pop-up .register-form .reg-form .input-crear{
+	padding: 4% 2%;
+	margin: 7% auto;
+	font-size: 100%;
+	border: 2px solid #C6C6C6;
+	width: 120%;
+	text-align: center;
+}
+
+.pop-up .register-form #boton-crear{
+	background: #FFF;
+	font-size: 140%;
+	border: 1px solid #707070;
+	padding: 3% 6%;
+	margin-top: 4%;
+	margin-bottom: 2%;
+}
+
+.pop-up .register-form .obligatorio{
+	color: #FF2B2B;
+}
+
+/*FOOTER*/
+
+footer{
+	background: #000;
+	border: 1px solid #F9F9F9;
+}
+
+footer p{
+	font-size: 18px;
+	color: #FFF;
+	text-align: center;
+	margin: 5px auto;
+}
+
+
