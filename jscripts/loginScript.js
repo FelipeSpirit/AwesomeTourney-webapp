@@ -11,7 +11,7 @@ function login() {
 	}
 }
 
-const IMGS = ['../../images/slider-image1.png', '../../images/slider-image2.png'];
+const IMGS = ['images/slider-image1.png', 'images/slider-image2.png'];
 const CHANGE_TIME = 2000;
 var current_img = 0;
 function slide() {
