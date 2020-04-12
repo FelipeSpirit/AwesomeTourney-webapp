@@ -1,6 +1,6 @@
 <?php
 class Database{
-	private $host;
+    private $host;
     private $db;
     private $user;
     private $password;
@@ -8,9 +8,9 @@ class Database{
 
     public function __construct(){
         $this->host = 'localhost';
-        $this->db   = '';
-        $this->user = '';
-        $this->password = '';
+        $this->db   = 'tourney';
+        $this->user = 'admin';
+        $this->password = 'admin';
         $this->charset  = 'utf8mb4';
     }
 
