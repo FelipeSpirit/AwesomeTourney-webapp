@@ -1,0 +1,66 @@
+header{
+	background: #BD3A31;
+	border-bottom: 1px solid #f0f0f0;
+	padding: 4px 0;
+	overflow: hidden;
+}
+
+header .logo{
+	float: left;
+	padding: 3px 0;
+	padding-left: 20px;
+}
+
+header .header-menu li{
+	display: inline-block;
+	list-style: none;
+	margin: 4px auto;
+}
+
+header .header-menu li a{
+	text-decoration: none;
+	vertical-align: center;
+	padding: 15px 10px;
+	font-size: 18px;
+	color: #C6C6C6;
+}
+
+header .header-menu li a:hover{
+	color: #FFFFFF;
+}
+
+/*PANEL CENTRAL*/
+
+.central{
+	padding-top: 15px;
+	padding-bottom: 15px;
+	background: #E9D3D3;
+}
+
+.central .slider{
+	margin-bottom: 15px;
+}
+
+.central .slider img{
+	width: 100%;
+}
+
+.central .aside-login{
+	border: 1px solid #000;
+	border-radius: 25px 25px;
+	background: #FFF;
+	padding: 15px;
+}
+
+.central .aside-login .login-title{
+	font-size: 30px;
+	text-align: center;
+	padding: 30px 0;
+	font-weight: normal;
+}
+
+.central .aside-login .recover-password{
+	display: block;
+	overflow: hidden;
+	padding: 10px 0;
+}
