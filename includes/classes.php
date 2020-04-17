@@ -3,6 +3,7 @@ setlocale(LC_TIME, 'es_ES@euro','es_ES');
 date_default_timezone_set('America/Bogota');
 
 include 'database.php';
+include 'user.php';
 
 function spanishDay ($date) {
 	$day = date('l', strtotime(substr($date, 0, 10)));

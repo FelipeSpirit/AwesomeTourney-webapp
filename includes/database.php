@@ -29,5 +29,24 @@ class Database{
             print_r('Error connection: ' . $e->getMessage());
         }
     }
+
+    public function insert($table,$insert){
+        $this->connect()->exec("ALTER TABLE $table AUTO_INCREMENT = 1");
+
+        try{
+            $pdo = $this->connect();
+            $query = $pdo->exec($insert);
+            return $pdo->lastInsertId();
+        }catch(PDOException $e){
+            return null;
+        }
+    }
+
+    public function consult($consult){
+        $query = $this->connect()->prepare($consult);
+        $query->execute();
+
+        return $query;
+    }
 }
 ?>

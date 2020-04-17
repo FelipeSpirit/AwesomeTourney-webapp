@@ -1,3 +1,23 @@
+<?php
+require_once '../includes/classes.php';
+	$userSession = new UserSession();
+    $user = new User();
+    $errorLogin='';
+
+    if(isset($_SESSION['user'])){
+    	header('location: ../dashboard');
+    }else if(isset($_POST['user']) && isset($_POST['password'])) {
+    	$username = $_POST['user'];
+    	$password = md5($_POST['password']);
+        $id=$user->exists($username,$password);
+    	if($id){
+    		$_SESSION['user'] = $id;
+    		header('location: ../dashboard');
+    	}else{
+    		$errorLogin='Nombre de usuario o contraseña incorrecto';
+    	}
+    }
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -40,16 +60,17 @@
 			<div class="col-lg-4">
 				<div class="aside-login">
 					<h3 class="login-title">Iniciar sesión</h3>
-					<form>
+					<?php echo $errorLogin;?>
+					<form method="POST">
 						<div class="login-fields">
 							<div class="form-group">
 								<label for="input-user">Nombre de usuario</label>
-							    <input type="text" class="form-control" id="input-user" placeholder="Nombre de usuario" required maxlength="48">
+							    <input type="text" class="form-control" id="input-user" placeholder="Nombre de usuario" required maxlength="48" name="user">
 							</div>
 
 							<div class="form-group">
 								<label for="input-password">Contraseña</label>
-							    <input type="password" class="form-control" id="input-password" placeholder="Contraseña" required maxlength="32" minlength="8">
+							    <input type="password" class="form-control" id="input-password" placeholder="Contraseña" required maxlength="32" minlength="8" name="password">
 							</div>
 						</div>
 
@@ -86,44 +107,44 @@
       			</div>
 
       			<div class="modal-body">
-      				<form>
+      				<form method="POST" action="insert_person.php">
       					<div class="form-group">
       						<label for="input-nickname">Nickname*</label>
-      						<input class="form-control" placeholder="Nickname" type="text" name="input-nickname" id="input-nickname" required>
+      						<input class="form-control" placeholder="Nickname" type="text" name="nickname" id="input-nickname" required>
       					</div>
 						
 						<div class="form-group">
       						<label for="input-email">Email*</label>
-      						<input class="form-control" placeholder="Email" type="text" name="input-email" id="input-email" required>
+      						<input class="form-control" placeholder="Email" type="text" name="email" id="input-email" required>
       					</div>
 
       					<div class="form-row">
       						<div class="form-group col-md-6">
       							<label for="input-password">Contraseña*</label>
-      							<input class="form-control" placeholder="Contraseña" type="text" name="input-password" id="input-password" required>
+      							<input class="form-control" placeholder="Contraseña" type="password" name="password" id="input-password" required>
       						</div>
 
       						<div class="form-group col-md-6">
       							<label for="input-rpassword">Repetir contraseña*</label>
-      							<input class="form-control" placeholder="Repetir contraseña" type="text" name="input-rpassword" id="input-rpassword" required>
+      							<input class="form-control" placeholder="Repetir contraseña" type="password" name="rpassword" id="input-rpassword" required>
       						</div>
       					</div>
 
       					<div class="form-row" hidden>
       						<div class="form-group col-md-6">
       							<label for="input-names">Nombres</label>
-      							<input class="form-control" placeholder="Nombres" type="text" name="input-names" id="input-names">
+      							<input class="form-control" placeholder="Nombres" type="text" name="names" id="input-names">
       						</div>
 
       						<div class="form-group col-md-6">
       							<label for="input-lnames">Apellidos</label>
-      							<input class="form-control" placeholder="Apellidos" type="text" name="input-lnames" id="input-lnames">
+      							<input class="form-control" placeholder="Apellidos" type="text" name="lnames" id="input-lnames">
       						</div>
       					</div>
 
       					<div class="form-group" hidden>
       						<label for="input-phone">Teléfono</label>
-      						<input class="form-control" placeholder="Nombres" type="text" name="input-phone" id="input-phone">
+      						<input class="form-control" placeholder="Nombres" type="text" name="phone" id="input-phone">
       					</div>
 
       					<div class="form-group">
