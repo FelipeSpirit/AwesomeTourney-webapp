@@ -1,13 +1,7 @@
 <?php
+class SimpleElimination extends TournamentType{
 
-    class SimpleElimination {
-
-        var $field;
-
-        function __construct() {
-            
-        }
-
-    }
-
-?>
+	function __construct() {
+		parent::__construct('Eliminación simple');
+	}
+}

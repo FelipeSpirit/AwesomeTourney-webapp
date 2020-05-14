@@ -11,7 +11,9 @@
 
 <body>
 	<header class="header col-lg-12">
-		<img id="header-logo" src="/images/logo.png">
+		<div class="header-logo">
+			<img id="header-logo" src="/images/logo.png">
+		</div>
 	</header>
 
 	<content style="float: left; margin-bottom: 20px;" class="col-lg-12">
