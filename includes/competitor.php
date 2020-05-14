@@ -1,21 +1,14 @@
 <?php
 
-class Competitor {
-    private $id;
+class Competitor extends Person{
     private $nickname;
-    private $name;
-    private $last_name;
-    private $phone;
 
-    function __construct($nk, $na, $la, $pho) {
+    function __construct($id,$nickname, $name=null, $last_name=null, $phone=null, $email=null) {
         $this->nickname = $nickname;
-        $this->name = $name;
-        $this->last_name = $last_name;
-        $this->phone = $phone;
+        parent::__construct($id, $name,$last_name,$phone,$email);
     }
-
-    public function getId(){
-        return $this->id;
+    
+    public function getNickname(){
+        return $this->nickname;
     }
 }
-?>

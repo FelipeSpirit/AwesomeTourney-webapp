@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="h-100">
 <head>
 	<title>Dashboard | Awesome Tourney</title>
 	<link rel="shortcut icon" href="/images/favicon.png">
@@ -9,24 +9,77 @@
 	<link rel="stylesheet" type="text/css" href="/assets/css/main.css">
 </head>
 
-<body>
-	<header class="col-lg-12">
-		<img id="header-logo" src="/images/logo.png">
-	</header>
+<body class="d-flex flex-column h-100">
 
-	<content style="margin-bottom: 20px;" class="col-lg-12">
-		<div class="row">
-			<div class="col-lg-12">
-				<div style="float: left;" class="col-lg-12">
-					<label><h1>Tus torneos</h1></label>
-					<button style="float: right;" class="btn btn-info">Nuevo torneo</button>
+	<header>
+		<div class="navbar navbar-dark static-top shadow-sm">
+			<div class="container d-flex justify-content-between">
+				<a class="navbar-brand" href="/">
+					<div class="header-logo">
+						<img id="header-logo" src="/images/logo.png">
+					</div>
+				</a>
+
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+			</div>
+		</div>
+
+		<div class="collapse bg-dark" id="navbarHeader">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12 col-md-12 py-4">
+						<h4 class="text-white">Gestionar torneos</h4>
+						<p class="text-muted"></p>
+					</div>
+					
 				</div>
 			</div>
 		</div>
-	</content>
+	</header>
 
-	<footer class="footer col-lg-12">
-		<h4>FOOTER</h4>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<label><h1>Tus torneos</h1></label>
+				<button style="float: right;" class="btn btn-info">Nuevo torneo</button>
+			</div>
+
+			<div class="col-lg-7">
+				<div class="card">
+					<div class="card-header">
+						<strong>Activos</strong>
+					</div>
+
+					<div class="card-body">
+						
+					</div>
+				</div>
+
+				<div class="separator"></div>
+			</div>
+
+
+			<div class="col-lg-5">
+				<div class="card">
+					<div class="card-header">
+						<strong>Archivados</strong>
+					</div>
+
+					<div class="card-body">
+						
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<footer class="footer mt-auto py-3">
+		<div class="container">
+			<p>&copy; 2020 | Todos los derechos reservados</p>
+		</div>
 	</footer>
 
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
