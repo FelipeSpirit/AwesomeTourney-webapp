@@ -1,9 +1,12 @@
 <?php
-class Match {
+class MatchFigure implements Figure{
+	private $x;
+	private $y;
+	private $match_height=55;
 	public $_id;
 	private $id;
-	private Match $nextMatch, $previousMatchA, $previousMatchB;
-	private Tournament $tournament;
+	private MatchFigure $nextMatch, $previousMatchA, $previousMatchB;
+	private TournamentFigure $tournament;
 	private Competitor $competitor_1,$competitor_2, $winner;
 	private $score_1;
 	private $score_2;
@@ -21,41 +24,16 @@ class Match {
 	}
 
 	function __construct1($id){
-		if($id instanceof Match){
-			$this->id=$id->id;
-			$this->score_1=$id->score_1;
-			$this->score_2=$id->score_2;
-
-			if(isset($id->previousMatchA))
-				$this->previousMatchA=$id->previousMatchA;
-
-			if(isset($id->previousMatchB))
-				$this->previousMatchB=$id->previousMatchB;
-
-			if(isset($id->nextMatch))
-				$this->nextMatch=$id->nextMatch;
-
-			if(isset($id->competitor_1))
-				$this->competitor_1=$id->competitor_1;
-
-			if(isset($id->competitor_2))
-				$this->competitor_2=$id->competitor_2;
-
-			if(isset($id->tournament))
-				$this->tournament=$id->tournament;
-			if(isset($id->winner))
-				$this->winner=$id->winner;
-		} else
-			$this->id=$id;
+		$this->id=$id;
 	}
 
-	function __construct3($id,Tournament $t, Competitor $c1){
+	function __construct3($id,TournamentFigure $t, Competitor $c1){
 		$this->id=$id;
 		$this->tournament=$t;
 		$this->competitor_1=$c1;
 	}
 
-	function __construct4($id,Tournament $t, Competitor $c1,Competitor $c2){
+	function __construct4($id,TournamentFigure $t, Competitor $c1,Competitor $c2){
 		$this->id=$id;
 		$this->tournament=$t;
 		$this->competitor_1=$c1;
@@ -89,11 +67,11 @@ class Match {
 		return $this->id;
 	}
 
-	public function setNextMatch(Match $match){
+	public function setNextMatch(MatchFigure $match){
 		$this->nextMatch=$match;
 	}
 
-	public function setPreviousMatches(Match $matchA,Match $matchB){
+	public function setPreviousMatches(MatchFigure $matchA,MatchFigure $matchB){
 		$this->previousMatchA=$matchA;
 		$this->previousMatchB=$matchB;
 	}
@@ -149,5 +127,17 @@ class Match {
 
 	public function getCompetitor2(){
 		return $this->competitor_2;
+	}
+
+	public function draw(){
+		include 'draw_match.php';
+	}
+
+	public function setMatchHeight($match_height){
+		$this->match_height;
+	}
+
+	public function setY($y){
+		$this->y = $y;
 	}
 }
