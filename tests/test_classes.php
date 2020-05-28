@@ -1,33 +1,28 @@
 <?php
+include '../includes/figure.php';
 include '../includes/person.php';
 include '../includes/competitor.php';
-include '../includes/match.php';
-include '../includes/round.php';
 include '../includes/tournament_type.php';
 include '../includes/simple_elimination.php';
-include '../includes/tournament.php';
+include '../includes/match_figure.php';
+include '../includes/round_figure.php';
+include '../includes/tournament_figure.php';
 
 $type= new SimpleElimination();
 
-$tournament= new Tournament('Torneo Setup Team', $type);
+$tournament= new TournamentFigure('Torneo Setup Team', $type);
 
-$competitor1 = new Competitor(1, 'Felipe');
-$competitor2 = new Competitor(2, 'Luis');
-$competitor3 = new Competitor(3, 'Yohan');
-$competitor4 = new Competitor(4, 'Fabian C');
-$competitor5 = new Competitor(5, 'David');
-$competitor6 = new Competitor(6, 'Daniel');
-$competitor7 = new Competitor(7, 'Diego');
-$competitor8 = new Competitor(8, 'Fabian R');
+function generateCompetitors($tournament,$quantity){
+	$names=["Fabian","Andrés","Yohan","Laura","Catalina","Camilo","Eduardo","Luis","José","Felipe","Daniel","Diego","Alejandro","Natalia","Pedro","Jorge","Jason","Bryan","María","Juan","Juana","Roberto","Rodolfo","Antonio","Fernando","Luisa","Camila","Paola","Leonardo","Cristian","Manuel","Sara","Sofia","Samuel","Angel","David","Javier","Nicolas","Alberto","Tatiana","Karen","Mauricio","Mario","Ramiro","Daniela","Ximena","Mariana","Lorena","Humberto","Esteban","Beatriz","Adriana","Lyda","Jazmin","Lizeth","Monica","Ramona","Elizabeth","Jairo","Alfredo","Julian","Emilio","Nestor","Pablo","Domingo","Sergio","Armando","LSinister","FSpirit","Lordom","Rokko","Scott","Samkr3w","Opia"];
 
-$tournament->addCompetitor($competitor1);
-$tournament->addCompetitor($competitor2);
-$tournament->addCompetitor($competitor3);
-$tournament->addCompetitor($competitor4);
-$tournament->addCompetitor($competitor5);
-$tournament->addCompetitor($competitor6);
-$tournament->addCompetitor($competitor7);
-$tournament->addCompetitor($competitor8);
+	for ($i=0; $i < $quantity; $i++) {
+		$competitor = new Competitor(($i+1), $names[random_int(0, count($names)-1)]);
+		$tournament->addCompetitor($competitor);
+	}
+}
+
+generateCompetitors($tournament,32);
+
 ?>
 
 <!DOCTYPE html>
@@ -77,43 +72,13 @@ $tournament->addCompetitor($competitor8);
 				<label><h1><?php echo $tournament->getName(); ?></h1></label>
 			</div>
 
-			<div class="col-lg-12">
+			<div class="col-lg-12 overflow-auto">
 				<div>
-					<svg width="1000"  height="<?php echo count($tournament->getRounds()[0]->getMatches())*80; ?>">
+					<svg width="<?php echo count($tournament->getRounds())*200; ?>" height="<?php echo count($tournament->getRounds()[0]->getMatches())*80; ?>">
 						<?php
-						$round_var=0;
-						foreach ($tournament->getRounds() as $round):
-						?>
-						<svg class="graph-round"x="<?php echo $round_var*180; ?>" y="<?php echo $round_var*33; ?>" width="150">
-							<?php
-							$match_var=0;
-							foreach ($round->getMatches() as $match):
-							?>
-								<svg x="0" y="<?php echo $match_var*65; ?>" height="55" class="graph-match">
-									<rect x="0" y="0" width="150" height="55" style="fill:gray" />
-									<svg x="0" y="0" width="28" height="55" height="55">
-										<rect x="1" y="1" width="28" height="53" style="fill:lightblue;"/>
-										<text x="8" y="35" font-size="20"><?php echo $match->getData()[0]; ?></text>
-									</svg>
-
-									<svg x="30" y="0" height="25" class="graph-competitor">
-										<rect x="1" y="1" width="118" height="23" style="fill:lightblue;"/>
-										<text x="10" y="18" font-size="15" ><?php echo $match->getData()[1]; ?></text>
-									</svg>
-
-									<svg x="30" y="30" height="25" class="graph-competitor">
-										<rect x="1" y="1" width="118" height="23" style="fill:lightblue;"/>
-										<text x="10" y="18" font-size="15" ><?php echo $match->getData()[2]; ?></text>
-									</svg>
-								</svg>
-							<?php
-							$match_var++;
-							endforeach;
-							?>
-						</svg>
-						<?php
-						$round_var++;
-						endforeach;
+						foreach ($tournament->getRounds() as $round){
+							$round->draw();
+						}
 						?>
 					</svg>
 				</div>

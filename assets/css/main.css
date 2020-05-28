@@ -12,7 +12,50 @@ header .header-logo img{
 	width: 100%;
 }
 
+
+
 .separator{
 	flex: 1 1 auto;
 	min-height: 10px;
 }
+
+.graph-match-rect{
+	fill: gray;
+}
+
+.graph-match:hover .graph-match-rect{
+	fill: darkgray;
+	cursor: pointer;
+}
+
+.graph-competitor-rect{
+	fill: var(--dark);
+}
+
+.grap-match-header-rect{
+	fill: var(--dark);
+}
+
+.graph-competitor-text{
+	fill: white;
+}
+
+.grap-match-header-text{
+	fill: white;
+}
+
+.graph-competitor-text:hover{
+	cursor: pointer;
+}
+
+.graph-competitor-rect:hover{
+	cursor: pointer;
+}
+
+.graph-competitor:hover .graph-competitor-rect{
+	opacity: 0.8;
+}
+
+
+
+
