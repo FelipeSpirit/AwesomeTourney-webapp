@@ -38,6 +38,7 @@ class Database{
             $query = $pdo->exec($insert);
             return $pdo->lastInsertId();
         }catch(PDOException $e){
+            echo $e->getMessage();
             return null;
         }
     }

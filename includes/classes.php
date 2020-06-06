@@ -2,8 +2,19 @@
 setlocale(LC_TIME, 'es_ES@euro','es_ES');
 date_default_timezone_set('America/Bogota');
 
+include 'theme.php';
 include 'database.php';
+include 'figure.php';
+include 'person.php';
 include 'user.php';
+include 'competitor.php';
+include 'tournament_type.php';
+include 'simple_elimination.php';
+include 'double_elimination.php';
+include 'round_robin.php';
+include 'match_figure.php';
+include 'round_figure.php';
+include 'tournament_figure.php';
 
 function spanishDay ($date) {
 	$day = date('l', strtotime(substr($date, 0, 10)));

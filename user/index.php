@@ -12,7 +12,7 @@ $user->charge($_SESSION['user']);
 <!DOCTYPE html>
 <html class="h-100">
 <head>
-	<title>Dashboard | Awesome Tourney</title>
+	<title>Usuario | Awesome Tourney</title>
 	<link rel="shortcut icon" href="/images/favicon.png">
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -24,52 +24,8 @@ $user->charge($_SESSION['user']);
 	<?php include '../fragments/menu.php'; ?>
 	<div class="container">
 		<div class="row">
-
 			<div class="col-lg-12">
-				<label><h1>Torneos</h1></label>
-			</div>
-
-			<div class="col-lg-7">
-				<div class="row">
-					<div class="col-lg-4">
-						<a href="/tourney?">
-							<div class="card <?php if($dark) echo 'bg-dark text-white';?>">
-								<div class="card-body">
-									<img src="/images/tourney/default/prime.png" style="width: 100%; height: 80px;" alt="Alt de imagen">
-								</div>
-								<div class="card-footer">Titulo de prueba</div>
-							</div>
-						</a>
-						<div class="col-lg-7 separator"></div>
-					</div>
-				</div>
-
-				<div class="col-lg-7 separator"></div>
-			</div>
-
-
-			<div class="col-lg-5">
-				<div class="card <?php if($dark) echo 'bg-dark text-white';?>">
-					<div class="card-header">
-						<strong>Tus torneos</strong>
-					</div>
-
-					<div class="card-body">
-					<?php 
-					if(count($user->getTournaments()) != 0): 
-						$db=new Database();
-						foreach ($user->getTournaments() as $tournament):?>
-							<a class="btn <?php if($dark) echo 'btn-dark'; else echo 'btn-light';?> btn-block" href="/tourney?id=<?php echo $tournament->getId(); ?>">
-								<?php echo $tournament->getName(); ?>
-							</a>
-					<?php 
-						endforeach;
-					else:
-					?>
-						No tienes torneos activos
-					<?php endif; ?>
-					</div>
-				</div>
+				<label><h1>En construcción</h1></label>
 			</div>
 		</div>
 	</div>

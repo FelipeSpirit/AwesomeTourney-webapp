@@ -1,5 +1,5 @@
 header, .nn{
-	background-color: #BD3A31;
+	background-color: var(--light);
 	margin-bottom: 15px;
 }
 
@@ -12,50 +12,137 @@ header .header-logo img{
 	width: 100%;
 }
 
-
-
-.separator{
-	flex: 1 1 auto;
-	min-height: 10px;
+.header-dark{
+	background-color: var(--dark) !important;
+	color: var(--light);
 }
 
-.graph-match-rect{
-	fill: gray;
+.graph-competitor-text:hover,
+.graph-competitor-rect:hover,
+.graph-competitor-text-dark:hover,
+.graph-competitor-rect-dark:hover{
+	cursor: pointer;
 }
 
-.graph-match:hover .graph-match-rect{
+.graph-competitor:hover .graph-competitor-rect,
+.graph-competitor:hover .graph-competitor-rect-dark{
+	opacity: 0.8;
+	cursor: pointer;
+}
+
+#bracket-container{
+	user-select: none;
+	cursor: grab;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #777;
+	margin-top: 20px;
+}
+
+.graph-competitor-rect,
+.graph-match-header-rect,
+.graph-round-header-rect,
+.graph-score-rect{
+	fill: var(--light);
+}
+
+.graph-competitor-rect-dark,
+.graph-match-header-rect-dark,
+.graph-round-header-rect-dark,
+.graph-score-rect-dark{
+	fill: var(--dark);
+}
+
+.graph-competitor-text-dark,
+.graph-match-header-text-dark,
+.graph-round-header-text-dark,
+.graph-score-text-dark{
+	fill: white;
+}
+
+.graph-match:hover .graph-match-rect,
+.graph-match:hover .graph-match-rect-dark{
 	fill: darkgray;
 	cursor: pointer;
 }
 
-.graph-competitor-rect{
+.graph-match-rect{
+	fill: #666;
+}
+
+.graph-match-rect-dark{
+	fill: gray;
+}
+
+.bracket-line{
+	stroke-width:2; 
+	stroke:var(--dark);
+}
+
+.bracket-line-dark{
+	stroke-width:2; 
+	stroke:var(--light);
+}
+
+.input-dark{
+	background: #333;
+	color: var(--light);
+}
+
+.graph-match:hover + .graph-config{
+	display: inherit;
+}
+
+.graph-config{
+	display:none;
+}
+
+.graph-config-rect{
 	fill: var(--dark);
-}
-
-.grap-match-header-rect{
-	fill: var(--dark);
-}
-
-.graph-competitor-text{
-	fill: white;
-}
-
-.grap-match-header-text{
-	fill: white;
-}
-
-.graph-competitor-text:hover{
-	cursor: pointer;
-}
-
-.graph-competitor-rect:hover{
-	cursor: pointer;
-}
-
-.graph-competitor:hover .graph-competitor-rect{
-	opacity: 0.8;
+	stroke-width:1;
+	stroke:#777;
 }
 
 
+.graph-config:hover{
+	display: inherit;
+	cursor: pointer
+}
 
+.graph-config-play{ 
+	fill:green;
+}
 
+.graph-config-play:hover{
+	fill: rgb(0,200,0);
+}
+
+.graph-winner{
+	stroke: orange;
+	stroke-width:3;
+}
+
+#navbarHeaderB{
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+.bg-dark{
+	color: var(--light);
+}
+
+.separator{
+	height: 10px;
+}
+
+@media (max-width: 990px) {
+   #navbarHeaderA {
+       display: none !important;
+   }
+}
+
+@media (min-width: 990px) {
+   #navbarHeaderB {
+       display: none !important;
+   }
+}
