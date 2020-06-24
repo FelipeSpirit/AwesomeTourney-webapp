@@ -3,3 +3,4 @@
 *.pdb
 *.ldb
 includes/database.php
+includes/ws/
