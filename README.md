@@ -1,1 +1,1 @@
-# Tournament App
+# AwesomeTourney
