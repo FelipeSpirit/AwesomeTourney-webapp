@@ -64,7 +64,7 @@ if(isset($_COOKIE['dark'])){
 								<div class="btn-group">
 									<?php 
 									if ($tournament->getState()=='IN'): ?>
-										<button class="btn btn-danger">Inscribirse</button>
+										<button class="btn btn-danger" hidden>Inscribirse</button>
 									<?php 
 									endif;
 
